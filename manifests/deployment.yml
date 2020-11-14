@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kubecluster-9726"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kubecluster-9726"
+  template:
+    metadata:
+      labels:
+        app: "kubecluster-9726"
+    spec:
+      containers:
+        - name: "kubecluster-9726"
+          image: "angularcontainerregistry.azurecr.io/kubecluster"
+          ports:
+          - containerPort: 80
